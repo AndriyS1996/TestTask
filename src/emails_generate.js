@@ -1,9 +1,9 @@
 
 
-function generateEmails(name, surname, domain){
+function generateEmails(name, surname, domain, numberOfEmails){
     let result = new Set();
     let specialСharacters = ['!', '~', '#', '|', '&', '.', '-', '_', ''];
-    while (result.size < 50){
+    while (result.size < numberOfEmails){
         let rname = getRandomInt(0, 4) ? name : ''; // email with name or without (1/4 probability that email will not have a name)
         let rsurname = rname ? [surname, surname.slice(0, 1), ''][getRandomInt(0, 3)] : surname; // generate surname
         let specialChar = rname && rsurname ? specialСharacters[Math.floor(Math.sqrt(Math.random() * 81))] : ''; // select the special symbol using function rule sqrt(x)
